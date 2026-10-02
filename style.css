@@ -1,0 +1,1770 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background: #02040a;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #02040a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN EXPERIENCE
+========================= */
+
+#experience {
+    position: relative;
+    width: 100%;
+    min-height: 1200vh;
+    background: #02040a;
+}
+
+
+/* =========================
+   LIVING SKY
+========================= */
+
+.sky {
+    position: fixed;
+    inset: -4vh -4vw;
+
+    z-index: 0;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transform:
+        translate3d(0, 0, 0)
+        scale(1.04);
+
+    will-change:
+        transform,
+        opacity;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.8s ease;
+}
+
+.sky-1 {
+    background-image:
+        url("images/sky-01.jpg.jpeg");
+
+    opacity: 1;
+}
+
+.sky-2 {
+    background-image:
+        url("images/sky-02.jpg.jpeg");
+}
+
+.sky-3 {
+    background-image:
+        url("images/sky-03.jpg.jpeg");
+}
+
+.sky-4 {
+    background-image:
+        url("images/sky-04.jpg.jpeg");
+}
+
+.sky-5 {
+    background-image:
+        url("images/sky-05.jpg.jpeg");
+}
+
+
+/* Dark cinematic layer */
+
+.sky-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.24)
+        );
+}
+
+
+/* =========================
+   SUBTLE STARS
+========================= */
+
+.stars-layer {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: 0.58;
+
+    background-image:
+
+        radial-gradient(
+            ellipse 3.5px 9px at center,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.62) 35%,
+            transparent 70%
+        ),
+
+        radial-gradient(
+            ellipse 9px 3.5px at center,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.62) 35%,
+            transparent 70%
+        ),
+
+        radial-gradient(
+            ellipse 2.6px 7px at center,
+            rgba(255,255,255,0.70) 0%,
+            rgba(255,255,255,0.44) 40%,
+            transparent 70%
+        ),
+
+        radial-gradient(
+            ellipse 7px 2.6px at center,
+            rgba(255,255,255,0.70) 0%,
+            rgba(255,255,255,0.44) 40%,
+            transparent 70%
+        );
+
+    background-size:
+        173px 173px,
+        173px 173px,
+        251px 251px,
+        251px 251px;
+
+    background-position:
+        40px 70px,
+        40px 70px,
+        120px 30px,
+        120px 30px;
+
+    animation:
+        starsDrift 30s linear infinite;
+}
+
+@keyframes starsDrift {
+
+    from {
+        background-position:
+            40px 70px,
+            40px 70px,
+            120px 30px,
+            120px 30px;
+    }
+
+    to {
+        background-position:
+            90px 120px,
+            90px 120px,
+            170px 80px,
+            170px 80px;
+    }
+}
+
+
+/* =========================
+   CONSTELLATIONS
+========================= */
+
+.constellation-layer {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 0.22;
+}
+
+.constellation-layer path {
+    fill: none;
+
+    stroke:
+        rgba(255,255,255,0.70);
+
+    stroke-width: 0.12;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation:
+        constellationReveal 5s ease forwards;
+}
+
+@keyframes constellationReveal {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =========================
+   SCENES
+========================= */
+
+.scene {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+.scene-1 {
+    min-height: 100vh;
+}
+
+.opening-text {
+    position: relative;
+
+    z-index: 10;
+
+    width: 80%;
+
+    text-align: center;
+
+    transform:
+        translateY(8vh);
+
+    opacity: 0;
+
+    animation:
+        openingReveal 2.5s ease forwards;
+
+    animation-delay:
+        0.5s;
+}
+
+
+/* =========================
+   NEW CINEMATIC TRADING OPENING
+========================= */
+
+.market-time {
+
+    margin:
+        0 0 6px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(0.65rem, 0.9vw, 0.82rem);
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        0.28em;
+
+    opacity:
+        0.52;
+}
+
+
+.market-open {
+
+    margin:
+        0 0 48px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(0.62rem, 0.8vw, 0.75rem);
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.32em;
+
+    opacity:
+        0.42;
+}
+
+
+.opening-lines {
+
+    margin:
+        0 auto 52px;
+
+    width:
+        min(600px, 88%);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(1rem, 1.55vw, 1.3rem);
+
+    line-height:
+        2.2;
+
+    letter-spacing:
+        0.025em;
+
+    color:
+        rgba(255,255,255,0.78);
+}
+
+.opening-lines p {
+
+    margin:
+        0;
+}
+
+.opening-lines p:last-child {
+
+    margin-top:
+        18px;
+
+    font-style:
+        italic;
+
+    opacity:
+        0.68;
+}
+
+
+.small-line {
+
+    margin:
+        0 0 18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(0.75rem, 1.2vw, 1rem);
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        0.18em;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0.72;
+}
+
+h1 {
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(3rem, 8vw, 7rem);
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        0.08em;
+}
+
+.opening-hint {
+
+    margin:
+        28px 0 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.75rem;
+
+    letter-spacing:
+        0.16em;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0.48;
+
+    animation:
+        hintFloat 3s ease-in-out infinite;
+}
+
+@keyframes openingReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8vh);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes hintFloat {
+
+    0%, 100% {
+        opacity: 0.35;
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        opacity: 0.65;
+
+        transform:
+            translateY(5px);
+    }
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.scene-2 {
+    min-height: 100vh;
+}
+
+.story-text {
+
+    position: relative;
+
+    z-index: 10;
+
+    width:
+        min(700px, 80%);
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(1.2rem, 2vw, 1.8rem);
+
+    line-height:
+        1.8;
+
+    letter-spacing:
+        0.02em;
+
+    color:
+        rgba(255,255,255,0.94);
+
+    will-change:
+        transform,
+        opacity;
+}
+
+.story-text p {
+    margin: 0;
+}
+
+.story-text p + p {
+
+    margin-top:
+        14px;
+
+    font-style:
+        italic;
+
+    opacity:
+        0.74;
+}
+
+.story-line {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 20%;
+
+    width: 130px;
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(255,255,255,0.70);
+
+    opacity:
+        0.60;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-scene {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    min-height:
+        135vh;
+
+    padding:
+        18vh 0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+.letter-section {
+
+    position: relative;
+
+    z-index: 10;
+
+    width:
+        min(620px, 78%);
+
+    margin:
+        0 auto;
+
+    text-align:
+        left;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+.letter-opening {
+
+    margin:
+        0 0 30px;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        clamp(2.2rem, 4vw, 3.4rem);
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    color:
+        rgba(255,255,255,0.96);
+}
+
+.letter-paragraph {
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(1.18rem, 1.7vw, 1.45rem);
+
+    line-height:
+        1.9;
+
+    letter-spacing:
+        0.008em;
+
+    font-weight:
+        400;
+
+    color:
+        rgba(255,255,255,0.94);
+}
+
+.letter-paragraph strong {
+    font-weight:
+        700;
+}
+
+
+/* =========================
+   PHOTO CHAPTER
+========================= */
+
+.photo-scene {
+
+    position: relative;
+
+    z-index: 6;
+
+    width: 100%;
+
+    min-height:
+        125vh;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   SINGLE PHOTOS
+========================= */
+
+.single-photo-wrap {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    isolation: isolate;
+}
+
+.single-photo {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    max-width: 82vw;
+    max-height: 78vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        2px;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.42);
+
+    will-change:
+        transform,
+        opacity;
+}
+
+.photo-caption {
+
+    position: absolute;
+
+    z-index: 4;
+
+    margin: 0;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        clamp(1.3rem, 2vw, 1.9rem);
+
+    line-height:
+        1.4;
+
+    letter-spacing:
+        0.02em;
+
+    color:
+        rgba(255,255,255,0.94);
+
+    opacity: 0;
+
+    will-change:
+        transform,
+        opacity;
+
+    text-shadow:
+        0 2px 18px rgba(0,0,0,0.55);
+}
+
+.eyes-caption {
+
+    bottom: 9vh;
+    right: 10vw;
+
+    transform:
+        translateY(18px);
+}
+
+.special-photo-caption {
+
+    bottom: 9vh;
+    left: 50%;
+
+    transform:
+        translate(-50%, 18px);
+
+    text-align:
+        center;
+
+    width:
+        min(700px, 80%);
+}
+
+
+/* =========================
+   PHOTO COLLAGES
+========================= */
+
+.photo-collage {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    transform:
+        translateZ(0);
+
+    will-change:
+        transform;
+}
+
+
+/* Individual photo cards */
+
+.photo-card {
+
+    position: absolute;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.34);
+
+    opacity: 0;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+.photo-card img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit:
+        cover;
+
+    transform:
+        scale(1.04);
+
+    will-change:
+        transform;
+}
+
+
+/* =========================
+   SHUSHANT COLLAGE 1
+========================= */
+
+.collage-one .photo-a {
+
+    width: 42vw;
+    height: 58vh;
+
+    left: 7vw;
+    top: 17vh;
+}
+
+.collage-one .photo-b {
+
+    width: 27vw;
+    height: 39vh;
+
+    right: 9vw;
+    top: 9vh;
+}
+
+.collage-one .photo-c {
+
+    width: 31vw;
+    height: 42vh;
+
+    right: 17vw;
+    bottom: 8vh;
+}
+
+
+/* =========================
+   SHUSHANT COLLAGE 2
+========================= */
+
+.collage-two .photo-a {
+
+    width: 34vw;
+    height: 53vh;
+
+    left: 9vw;
+    top: 9vh;
+}
+
+.collage-two .photo-b {
+
+    width: 31vw;
+    height: 42vh;
+
+    right: 8vw;
+    top: 15vh;
+}
+
+.collage-two .photo-c {
+
+    width: 38vw;
+    height: 48vh;
+
+    left: 28vw;
+    bottom: 5vh;
+}
+
+
+/* =========================
+   SHUSHANT COLLAGE 3
+========================= */
+
+.collage-three .photo-a {
+
+    width: 52vw;
+    height: 70vh;
+
+    left: 24vw;
+    top: 13vh;
+}
+
+
+/* =========================
+   US COLLAGE 1
+========================= */
+
+.collage-us-one .photo-a {
+
+    width: 31vw;
+    height: 43vh;
+
+    left: 7vw;
+    top: 12vh;
+}
+
+.collage-us-one .photo-b {
+
+    width: 34vw;
+    height: 48vh;
+
+    right: 8vw;
+    top: 8vh;
+}
+
+.collage-us-one .photo-c {
+
+    width: 43vw;
+    height: 43vh;
+
+    left: 29vw;
+    bottom: 5vh;
+}
+
+
+/* =========================
+   US COLLAGE 2
+========================= */
+
+.collage-us-two .photo-a {
+
+    width: 38vw;
+    height: 55vh;
+
+    left: 8vw;
+    top: 14vh;
+}
+
+.collage-us-two .photo-b {
+
+    width: 42vw;
+    height: 58vh;
+
+    right: 8vw;
+    bottom: 9vh;
+}
+
+
+/* =========================
+   ROTATION
+========================= */
+
+.rotated-left {
+
+    transform:
+        rotate(-90deg);
+
+    overflow:
+        hidden;
+}
+
+.rotated-left img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center center;
+
+    transform:
+        scale(1);
+
+    background:
+        transparent;
+}
+
+
+/* =========================
+   SPECIAL PHOTO
+========================= */
+
+.special-photo-scene {
+
+    min-height:
+        135vh;
+}
+
+.special-photo {
+
+    max-width:
+        76vw;
+
+    max-height:
+        74vh;
+}
+
+
+/* =========================
+   PHOTO ATMOSPHERE
+========================= */
+
+.photo-scene::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.035),
+            transparent 55%
+        );
+
+    opacity:
+        0.8;
+}
+
+
+/* =========================
+   LITTLE PHOTO TRANSITION
+========================= */
+
+.photo-transition-scene {
+
+    min-height:
+        85vh;
+}
+
+.photo-transition-content {
+
+    position: relative;
+
+    z-index: 4;
+
+    width:
+        min(700px, 82%);
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(22px);
+
+    animation:
+        photoTransitionReveal 1.8s ease forwards;
+}
+
+.photo-transition-main {
+
+    margin: 0;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        clamp(2rem, 4vw, 3.2rem);
+
+    line-height:
+        1.3;
+
+    color:
+        rgba(255,255,255,0.96);
+}
+
+.photo-transition-sub {
+
+    margin:
+        20px 0 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(1rem, 1.5vw, 1.25rem);
+
+    line-height:
+        1.7;
+
+    letter-spacing:
+        0.02em;
+
+    color:
+        rgba(255,255,255,0.72);
+}
+
+@keyframes photoTransitionReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(22px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending-scene {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+}
+
+.ending-text {
+
+    width:
+        min(650px, 80%);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(1.3rem, 2vw, 1.8rem);
+
+    line-height:
+        1.8;
+
+    opacity:
+        0.92;
+}
+
+.ending-text p {
+
+    margin:
+        0;
+}
+
+.ending-text p + p {
+
+    margin-top:
+        10px;
+
+    font-style:
+        italic;
+
+    opacity:
+        0.72;
+}
+
+
+/* =========================
+   LETTER SPACING
+========================= */
+
+.letter-gap {
+    margin-top: 55px !important;
+}
+
+.special-letter-scene {
+    min-height: 115vh;
+}
+
+.special-letter {
+    text-align: center;
+}
+
+.letter-signature {
+    margin-top: 45px !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .sky {
+
+        inset:
+            -3vh -5vw;
+
+        background-position:
+            center center;
+
+        background-size:
+            cover;
+    }
+
+
+    /* =====================
+       MOBILE OPENING
+    ===================== */
+
+    .market-time {
+
+        font-size:
+            0.65rem;
+
+        letter-spacing:
+            0.24em;
+    }
+
+    .market-open {
+
+        margin-bottom:
+            36px;
+
+        font-size:
+            0.6rem;
+
+        letter-spacing:
+            0.26em;
+    }
+
+    .opening-lines {
+
+        width:
+            88%;
+
+        margin-bottom:
+            42px;
+
+        font-size:
+            0.98rem;
+
+        line-height:
+            2;
+
+        letter-spacing:
+            0.015em;
+    }
+
+    .opening-lines p:last-child {
+
+        margin-top:
+            14px;
+    }
+
+
+    .small-line {
+
+        font-size:
+            0.7rem;
+
+        letter-spacing:
+            0.14em;
+    }
+
+    h1 {
+
+        font-size:
+            clamp(2.8rem, 15vw, 5rem);
+    }
+
+
+    /* =====================
+       INTRO
+    ===================== */
+
+    .story-text {
+
+        width:
+            84%;
+
+        font-size:
+            1.15rem;
+
+        line-height:
+            1.7;
+    }
+
+
+    /* =====================
+       LETTER
+    ===================== */
+
+    .letter-scene {
+
+        min-height:
+            150vh;
+
+        padding:
+            15vh 0;
+    }
+
+    .letter-section {
+
+        width:
+            78%;
+    }
+
+    .letter-opening {
+
+        margin-bottom:
+            26px;
+
+        font-size:
+            2.4rem;
+    }
+
+    .letter-paragraph {
+
+        font-size:
+            1.08rem;
+
+        line-height:
+            1.8;
+    }
+
+
+    /* =====================
+       ENDING
+    ===================== */
+
+    .ending-text {
+
+        width:
+            82%;
+
+        font-size:
+            1.15rem;
+
+        line-height:
+            1.7;
+    }
+
+
+    /* =====================
+       MOBILE PHOTOS
+    ===================== */
+
+    .photo-scene {
+
+        min-height:
+            120vh;
+    }
+
+    .single-photo-wrap {
+
+        height:
+            100vh;
+    }
+
+    .single-photo {
+
+        max-width:
+            88vw;
+
+        max-height:
+            70vh;
+    }
+
+    .photo-caption {
+
+        font-size:
+            1.25rem;
+    }
+
+    .eyes-caption {
+
+        right:
+            8vw;
+
+        bottom:
+            8vh;
+
+        text-align:
+            right;
+    }
+
+    .special-photo-caption {
+
+        bottom:
+            7vh;
+
+        width:
+            84%;
+
+        font-size:
+            1.25rem;
+    }
+
+
+    /*
+     * Mobile collage compositions.
+     * Still uses multiple photos together,
+     * but keeps enough breathing room.
+     */
+
+    .photo-collage {
+
+        height:
+            100vh;
+
+        width:
+            100%;
+    }
+
+
+    .collage-one .photo-a {
+
+        width:
+            53vw;
+
+        height:
+            42vh;
+
+        left:
+            4vw;
+
+        top:
+            15vh;
+    }
+
+    .collage-one .photo-b {
+
+        width:
+            38vw;
+
+        height:
+            29vh;
+
+        right:
+            4vw;
+
+        top:
+            8vh;
+    }
+
+    .collage-one .photo-c {
+
+        width:
+            43vw;
+
+        height:
+            30vh;
+
+        right:
+            7vw;
+
+        bottom:
+            10vh;
+    }
+
+
+    .collage-two .photo-a {
+
+        width:
+            44vw;
+
+        height:
+            39vh;
+
+        left:
+            5vw;
+
+        top:
+            9vh;
+    }
+
+    .collage-two .photo-b {
+
+        width:
+            43vw;
+
+        height:
+            31vh;
+
+        right:
+            4vw;
+
+        top:
+            13vh;
+    }
+
+    .collage-two .photo-c {
+
+        width:
+            51vw;
+
+        height:
+            34vh;
+
+        left:
+            25vw;
+
+        bottom:
+            7vh;
+    }
+
+
+    .collage-three .photo-a {
+
+        width:
+            78vw;
+
+        height:
+            63vh;
+
+        left:
+            11vw;
+
+        top:
+            14vh;
+    }
+
+
+    .collage-us-one .photo-a {
+
+        width:
+            43vw;
+
+        height:
+            31vh;
+
+        left:
+            4vw;
+
+        top:
+            9vh;
+    }
+
+    .collage-us-one .photo-b {
+
+        width:
+            46vw;
+
+        height:
+            34vh;
+
+        right:
+            3vw;
+
+        top:
+            13vh;
+    }
+
+    .collage-us-one .photo-c {
+
+        width:
+            64vw;
+
+        height:
+            35vh;
+
+        left:
+            18vw;
+
+        bottom:
+            8vh;
+    }
+
+
+    .collage-us-two .photo-a {
+
+        width:
+            48vw;
+
+        height:
+            39vh;
+
+        left:
+            4vw;
+
+        top:
+            13vh;
+    }
+
+    .collage-us-two .photo-b {
+
+        width:
+            55vw;
+
+        height:
+            42vh;
+
+        right:
+            4vw;
+
+        bottom:
+            10vh;
+    }
+
+
+    .special-photo-scene {
+
+        min-height:
+            125vh;
+    }
+
+    .special-photo {
+
+        max-width:
+            88vw;
+
+        max-height:
+            70vh;
+    }
+
+    .photo-transition-scene {
+
+        min-height:
+            75vh;
+    }
+
+    .photo-transition-content {
+
+        width:
+            84%;
+    }
+
+    .photo-transition-main {
+
+        font-size:
+            2rem;
+    }
+
+    .photo-transition-sub {
+
+        margin-top:
+            16px;
+
+        font-size:
+            1rem;
+
+        line-height:
+            1.6;
+    }
+
+}
+/* =========================
+   MUSIC PROMPT
+========================= */
+
+.music-prompt {
+    margin-top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(0.62rem, 0.8vw, 0.72rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.42;
+    transition: opacity 1s ease;
+}
+
+
+/* =========================
+   MOBILE MUSIC PROMPT
+========================= */
+
+@media (max-width: 768px) {
+
+    .music-prompt {
+        margin-top: 14px;
+        font-size: 0.6rem;
+        letter-spacing: 0.15em;
+    }
+
+}
+/* Caption specifically for US photo 5 */
+.collage-us-two .photo-b {
+    overflow: visible;
+}
+
+.collage-us-two .photo-b .photo-caption {
+    display: block;
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+}
